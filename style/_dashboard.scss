@@ -1,0 +1,195 @@
+.error-message {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  h1 {
+    background-color: $red;
+    color: $white;
+    padding: 20px 10px;
+    font-size: 25px;
+    text-align: center;
+  }
+  a {
+    padding: 10px 20px;
+    background-color: $blue;
+    color: $white;
+    width: fit-content;
+    margin-top: 50px;
+  }
+}
+
+.dashboard-header1 {
+  background-color: $darkGrey;
+  padding: 10px 0px;
+  .container {
+    h1 {
+      color: $white;
+      font-weight: normal;
+      font-size: 25px;
+    }
+    .logout-and-admin {
+      margin-left: auto;
+      a {
+        text-decoration: none;
+        color: $white;
+        margin: 0px 10px;
+        i {
+          margin-right: 5px;
+        }
+      }
+    }
+  }
+}
+
+.dashboard-header2 {
+  padding: 20px 0px;
+  .files-creation {
+    margin-left: auto;
+    button {
+      border: none;
+      color: $white;
+      background-color: $blue;
+      padding: 10px 20px;
+    }
+  }
+}
+
+.files-container {
+  background-color: $lightGrey;
+  padding: 20px 0px;
+  .files-body {
+    background-color: $white;
+    padding-left: 0px;
+    padding-right: 0px;
+    box-shadow: 0px 0px 10px $shadowcolor;
+    table {
+      width: 100%;
+      .contents-header {
+        border-bottom: 1px solid $darkGrey;
+
+        a {
+          color: $black;
+          text-decoration: none;
+        }
+      }
+      tr {
+        display: flex;
+        align-items: center;
+        td {
+          padding: 10px 20px;
+        }
+        .file-name {
+          display: flex;
+          flex-direction: column;
+          flex: 30%;
+          .fa-folder {
+            margin-right: 10px;
+            color: $darkGrey;
+          }
+          span {
+            color: $blue;
+          }
+          em {
+            font-size: 14px;
+            color: $darkGrey;
+          }
+        }
+        .extension {
+          flex: 30%;
+        }
+        .date {
+          flex: 30%;
+        }
+        .manage {
+          display: flex;
+          justify-content: space-around;
+          flex: 10%;
+          span {
+            border: 1px solid $darkGrey;
+            padding: 2px 5px;
+            cursor: pointer;
+          }
+        }
+        &:nth-child(even) {
+          background-color: $lightGrey;
+        }
+      }
+    }
+
+    .contents-body {
+      .file-name {
+        display: flex;
+        flex-direction: column;
+        em {
+          font-size: 12px;
+          color: $darkGrey;
+        }
+      }
+    }
+  }
+}
+
+//Create Folder modal style
+#createFolderModal,
+#uploadFileModal {
+  .modal-dialog {
+    top: 100px;
+    right: -200px;
+    .modal-content {
+      width: 80%;
+      margin: auto;
+      .modal-title-and-close {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 10px;
+        span {
+          cursor: pointer;
+        }
+      }
+      form {
+        #folderName {
+          width: 100%;
+        }
+        .create-folder-form-buttons,
+        .upload-file-form-buttons {
+          display: flex;
+          justify-content: flex-end;
+          margin-top: 10px;
+          button {
+            background-color: transparent;
+            color: $black;
+          }
+          input {
+            background-color: $blue;
+            color: $white;
+            border: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+#uploadFileModal {
+  .modal-dialog {
+    right: -300px;
+  }
+}
+
+// View File modal
+#view-file-modal {
+  .modal-dialog {
+    max-width: fit-content;
+    .modal-body {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      button {
+        margin-bottom: 10px;
+      }
+      img {
+        width: 700px;
+      }
+    }
+  }
+}

@@ -1,0 +1,21 @@
+.container {
+  .signup-container {
+    width: 100%;
+    .left-column {
+      flex: 30%;
+      background-color: $blue;
+      padding: 60px 50px;
+      div {
+        flex: 50%;
+        * {
+          color: $white;
+        }
+      }
+    }
+    .right-column {
+      flex: 70%;
+      background-color: $lightGrey;
+      padding: 60px 100px;
+    }
+  }
+}

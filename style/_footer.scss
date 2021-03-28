@@ -1,0 +1,11 @@
+.footer {
+  background-color: $darkGrey;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  p {
+    color: $white;
+    margin-bottom: 0px;
+  }
+}

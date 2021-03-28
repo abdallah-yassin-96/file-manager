@@ -1,0 +1,6 @@
+Js functions:
+
+string.substring(from-index, to-index); -> to trim string
+string.slice(from-index, to-index); -> to trim string
+string.toUpperCase(); -> capetlize text ()
+string.charAt(index) -> to select specific char in index
