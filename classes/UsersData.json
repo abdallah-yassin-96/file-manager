@@ -4,5 +4,11 @@
     "lastName": "yassin",
     "email": "abdallah@gmail.com",
     "password": "$2y$10$B2SfyImv1FWh5ftwl3oYjuY1Os9im7fDBN7SFAF.4qhlHaJ7DF54."
+  },
+  {
+    "firstName": "ahmad",
+    "lastName": "ahmad",
+    "email": "ahmad@gmail.com",
+    "password": "$2y$10$6PCquWAaJQU6Dkgm0Z/FvegjsVrFR2d/tUuhqF/zbm6b51bEoGyc."
   }
 ]

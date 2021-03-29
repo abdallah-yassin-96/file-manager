@@ -30,8 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 
     $newFolder = new UserFolder($user);
-    $newFolder->create('');
-
+    $newFolder->createUserFolder('');
 
     header('location: ../login.php');
 }

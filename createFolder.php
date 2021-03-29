@@ -6,7 +6,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $folder_name = $_POST['folderName'];
     $current_path = $_SESSION['folder_path'];
     $newFolder = new UserFolder($user);
-    if ($newFolder->create($folder_name)) {
+    if ($newFolder->createInnerFolder($folder_name)) {
 ?>
         <script>
             alert('file exists');

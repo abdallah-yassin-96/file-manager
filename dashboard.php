@@ -16,7 +16,11 @@ if (!isset($_SESSION['user'])) {
 <?php
 } else {
     $user = $_SESSION['user'];
-    $_SESSION['folder_path'] = "directories/{$user->email}";
+    // echo '<pre>';
+    // var_dump($user);
+    // echo '</pre>';
+    // die();
+    $_SESSION['folder_path'] = "../directories/{$user->email}";
 ?>
 
     <div class="dashboard-header1">

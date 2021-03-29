@@ -9,15 +9,25 @@ class UserFolder
         $this->user = $user;
     }
 
-    public function create($folderName)
+    public function createUserFolder($folderName)
     {
-        $username = $this->user->email;
-        $dir = "directories/{$username}/{$folderName}";
+        $userEmail = $this->user['email'];
+        $dir = "../directories/{$userEmail}/{$folderName}";
         if (file_exists($dir)) {
-            return 1;
+            echo 'file exist';
         } else {
             mkdir($dir, 0, true);
-            return 0;
+        }
+    }
+
+    public function createInnerFolder($folderName)
+    {
+        $userEmail = $this->user->email;
+        $dir = "directories/{$userEmail}/{$folderName}";
+        if (file_exists($dir)) {
+            echo 'file exist';
+        } else {
+            mkdir($dir, 0, true);
         }
     }
 }
