@@ -29,8 +29,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         echo 'There is some error';
     }
 
-    $newFolder = new UserFolder($user);
-    $newFolder->createUserFolder('');
+    $newFolder = new UserFolder((object)$user);
+    $newFolder->create('');
 
     header('location: ../login.php');
 }

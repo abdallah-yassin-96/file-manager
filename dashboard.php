@@ -1,9 +1,5 @@
 <?php
 require('header.php');
-// echo '<pre>';
-// var_dump($_SESSION['user']);
-// echo '</pre>';
-// die();
 ?>
 
 <?php
@@ -16,11 +12,9 @@ if (!isset($_SESSION['user'])) {
 <?php
 } else {
     $user = $_SESSION['user'];
-    // echo '<pre>';
-    // var_dump($user);
-    // echo '</pre>';
-    // die();
-    $_SESSION['folder_path'] = "../directories/{$user->email}";
+    $_SESSION['folder_path'] = "directories/{$user->email}";
+    $new_path = $_GET['path'] ?? "";
+    $directory = "directories/{$user->email}/{$new_path}";
 ?>
 
     <div class="dashboard-header1">
@@ -47,6 +41,7 @@ if (!isset($_SESSION['user'])) {
                                     <span type="button" data-dismiss="modal">&#10005;</span>
                                 </div>
                                 <form action="createFolder.php" method="POST" class="create-folder-form">
+                                    <input type="hidden" name="path" value="<?= $new_path ?>">
                                     <input type="text" name="folderName" id="folderName">
                                     <div class="create-folder-form-buttons">
                                         <button type="button" data-dismiss="modal">Cancel</button>
@@ -89,21 +84,22 @@ if (!isset($_SESSION['user'])) {
                     <td class="manage"><a href="javascript:void(0)">Manage</a></td>
                 </tr>
                 <?php
-                $main_dir = "directories/{$user->email}";
-                $active_row;
-                chdir($main_dir);
+
+                chdir($directory);
                 $dh = opendir('.');
                 while ($file = readdir($dh)) {
                     if ($file != "." && $file != "..") { ?>
-                        <tr>
+                        <tr id="soso">
                             <td class="file-name">
                                 <?php
                                 if (filetype($file) === 'dir') { ?>
-                                    <a href="<?php echo $main_dir . "/" . $file; ?>"><i class="far fa-folder"></i><?php echo $file ?></a>
+                                    <a href="<?= "?path={$new_path}/{$file}" ?>"><i class="far fa-folder"></i><?php echo $file ?></a>
                                 <?php
                                 } else {
-                                    echo '<span>' . $file . '</span>';
-                                    echo '<em>' . $file . '</em>';
+                                ?>
+                                    <a href="<?= "{$directory}/{$file}" ?>" target="_blank"><?php echo $file ?></a>
+                                    <em><?php echo $file ?></em>
+                                <?php
                                 }
                                 ?>
                             </td>
@@ -142,7 +138,7 @@ if (!isset($_SESSION['user'])) {
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
-                            <img src="" alt="image" data-img>
+                            <iframe id="view-Item-modal-image" src="" alt="image"></iframe>
                         </div>
                     </div>
                 </div>
@@ -153,18 +149,14 @@ if (!isset($_SESSION['user'])) {
 }
 ?>
 
-
 <script>
     jQuery('document').ready(function() {
-        jQuery('.manage .view').click(function() {
-            jQuery('#view-file-modal').on('show.bs.modal', function(e) {
-                let file = e.relatedTarget.dataset.file || '';
-                var path = <?php echo $main_dir; ?>;
-
-                jQuery(this).find('img[data-img]').attr('src', path + '/' + file);
-            })
-        });
-    })
+        jQuery(".view").click(function() {
+            var fileName = jQuery(this).attr("data-file");
+            var dir = "<?php echo $directory ?>";
+            jQuery("#view-Item-modal-image").attr("src", dir + "/" + fileName);
+        })
+    });
 </script>
 
 <?php require('footer.php'); ?>

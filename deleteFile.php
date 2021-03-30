@@ -2,13 +2,18 @@
 require('header.php');
 require('classes/UserFolder.php');
 $user = $_SESSION['user'];
-$curret_path = $_SESSION['folder_path'];
-if (isset($_POST['deleteFile'])) {
-    $fileName = $_POST['fileName'];
-    if (is_dir($curret_path . '/' . $fileName)) {
-        rmdir($curret_path . '/' . $fileName);
-        header("location: dashboard.php?success");
-    } else if (!unlink($curret_path . '/' . $fileName)) {
-        echo "Error deleting this file";
-    }
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $folder_name = $_POST['folderName'];
+    $path = trim($_POST['path'], "/");
+    $full_path = "{$path}/{$folder_name}";
+    // var_dump($folder_name);
+    // var_dump($path);
+    // var_dump($full_path);
+    // var_dump($_POST);
+    // var_dump($user->firstName);
+
+    // die();
+    $newFolder = new UserFolder($user);
+    $newFolder->delete($full_path);
+    header("location: dashboard.php?path={$path}");
 }

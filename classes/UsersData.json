@@ -1,14 +1,1 @@
-[
-  {
-    "firstName": "abdallah",
-    "lastName": "yassin",
-    "email": "abdallah@gmail.com",
-    "password": "$2y$10$B2SfyImv1FWh5ftwl3oYjuY1Os9im7fDBN7SFAF.4qhlHaJ7DF54."
-  },
-  {
-    "firstName": "ahmad",
-    "lastName": "ahmad",
-    "email": "ahmad@gmail.com",
-    "password": "$2y$10$6PCquWAaJQU6Dkgm0Z/FvegjsVrFR2d/tUuhqF/zbm6b51bEoGyc."
-  }
-]
+[{"firstName":"abdallah","lastName":"yassin","email":"abdallah@gmail.com","password":"$2y$10$B2SfyImv1FWh5ftwl3oYjuY1Os9im7fDBN7SFAF.4qhlHaJ7DF54."},{"firstName":"ahmad","lastName":"ahmad","email":"ahmad@gmail.com","password":"$2y$10$6PCquWAaJQU6Dkgm0Z\/FvegjsVrFR2d\/tUuhqF\/zbm6b51bEoGyc."},{"firstName":"ali","lastName":"ali","email":"ali@gmail.com","password":"$2y$10$zBWeF0dSEHxyxKGtr.7qV.xAHR95TUh0C0q3ZqK1DS66C287GNjva"},{"firstName":"soso","lastName":"soso","email":"soso@gmail.com","password":"$2y$10$dX75NtTHPF24iVPz8pspOeg3b7P0KHF5ho6aZkk3DikVjikHW3X0K"},{"firstName":"soso","lastName":"soso","email":"soso@gmail.com","password":"$2y$10$kbQJwmfeo2WTf4YFGUSkt.lBD93W4p3MCmDmM3bE83XvsnndUOTfW"},{"firstName":"sawsan","lastName":"sawsan","email":"sawsan@gmail.com","password":"$2y$10$94iOUlQm\/5CTTkEF1NtGBe0lReYk\/ncQ2wlV02dkJseq2Tzpb4deW"}]
